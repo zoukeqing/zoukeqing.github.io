@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Docker,Linux," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zoukeqing's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://s1.ax1x.com/2018/09/10/iFpFGF.jpg?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="前言BusyBox 是一个集成了一百多个最常用 Linux 命令和工具（如 cat、echo、grep、mount、 telnet 等）的精简工具箱，它只需要几 MB 的大小，很方便进行各种快速验证，被誉为“Linux 系统的瑞士军刀”。 BusyBox 可运行于多款 POSIX 环境的操作系统中，如 Linux（包括 Android）、Hurd、 FreeBSD 等。">
+<meta name="keywords" content="Docker,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有Docker？这可能学习Linux最好的方式">
+<meta property="og:url" content="http://yoursite.com/2018/09/13/learning-linux/index.html">
+<meta property="og:site_name" content="zoukeqing&#39;s Blog">
+<meta property="og:description" content="前言BusyBox 是一个集成了一百多个最常用 Linux 命令和工具（如 cat、echo、grep、mount、 telnet 等）的精简工具箱，它只需要几 MB 的大小，很方便进行各种快速验证，被誉为“Linux 系统的瑞士军刀”。 BusyBox 可运行于多款 POSIX 环境的操作系统中，如 Linux（包括 Android）、Hurd、 FreeBSD 等。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-13T03:56:47.342Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="有Docker？这可能学习Linux最好的方式">
+<meta name="twitter:description" content="前言BusyBox 是一个集成了一百多个最常用 Linux 命令和工具（如 cat、echo、grep、mount、 telnet 等）的精简工具箱，它只需要几 MB 的大小，很方便进行各种快速验证，被誉为“Linux 系统的瑞士军刀”。 BusyBox 可运行于多款 POSIX 环境的操作系统中，如 Linux（包括 Android）、Hurd、 FreeBSD 等。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/13/learning-linux/"/>
+
+
+
+
+
+
+  <title>有Docker？这可能学习Linux最好的方式 | zoukeqing's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zoukeqing's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/13/learning-linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zoukeqing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/09/10/iFuZVS.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zoukeqing's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">有Docker？这可能学习Linux最好的方式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-13T08:08:08+08:00">
+                2018-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index">
+                    <span itemprop="name">Docker</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/13/learning-linux/" class="leancloud_visitors" data-flag-title="有Docker？这可能学习Linux最好的方式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+			
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>BusyBox 是一个集成了一百多个最常用 Linux 命令和工具（如 cat、echo、grep、mount、 telnet 等）的精简工具箱，它只需要几 MB 的大小，很方便进行各种快速验证，被誉为“Linux 系统的瑞士军刀”。 BusyBox 可运行于多款 POSIX 环境的操作系统中，如 Linux（包括 Android）、Hurd、 FreeBSD 等。</p>
+<a id="more"></a>
+<h1 id="Docker需要掌握的知识点"><a href="#Docker需要掌握的知识点" class="headerlink" title="Docker需要掌握的知识点"></a>Docker需要掌握的知识点</h1><h2 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h2><p>不知道具体参数的可以<code>docker pull --help</code></p>
+<h2 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h2><p>启动容器有两种方式，一种是基于镜像新建一个容器并启动，另外一个是将在终止状态 （ stopped ）的容器重新启动。 因为 Docker 的容器实在太轻量级了，很多时候用户都是随时删除和新创建容器。</p>
+<p>处于终止状态的容器，可以通过 <code>docker container start</code> 命令来重新启动。 此外， <code>docker container restart</code> 命令会将一个运行态的容器终止，然后再重新启动它。</p>
+<h3 id="新建并启动"><a href="#新建并启动" class="headerlink" title="新建并启动"></a>新建并启动</h3><p><code>docker run</code></p>
+<h3 id="启动已终止容器"><a href="#启动已终止容器" class="headerlink" title="启动已终止容器"></a>启动已终止容器</h3><p><code>docker container start</code></p>
+<h3 id="终止容器"><a href="#终止容器" class="headerlink" title="终止容器"></a>终止容器</h3><p><code>docker container stop</code> 来终止一个运行中的容器</p>
+<h3 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h3><h4 id="docker-attach"><a href="#docker-attach" class="headerlink" title="docker attach"></a>docker attach</h4><p><code>docker attach</code>是Docker自带的命令，下面示例就如何使用该命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">G:\Docker&gt;docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">7fb6406e7f98        busybox             &quot;sh&quot;                11 hours ago        Up 3 seconds                            upbeat_neumann</span><br><span class="line"></span><br><span class="line">G:\Docker&gt;docker attach 7fb</span><br><span class="line">/ # exit</span><br><span class="line"></span><br><span class="line">G:\Docker&gt;docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES</span><br><span class="line">7fb6406e7f98        busybox             &quot;sh&quot;                11 hours ago        Exited (0) 3 seconds ago                       upbeat_neumann</span><br></pre></td></tr></table></figure>
+<p>可以发现如果从这个 stdin 中 exit，会导致容器的停止。</p>
+<h4 id="docker-exec"><a href="#docker-exec" class="headerlink" title="docker exec"></a>docker exec</h4><p><code>docker exec</code> 后面可以跟多个参数，比如 -i -t参数</p>
+<p>只用 -i 参数时，由于没有分配伪终端，界面没有我们熟悉的 Linux 命令提示符，但命令执 行结果仍然可以返回。 当 -i -t 参数一起使用时，则可以看到我们熟悉的 Linux 命令提示符。</p>
+<p>下面示例就如何使用该命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">G:\Docker&gt;docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES</span><br><span class="line">7fb6406e7f98        busybox             &quot;sh&quot;                11 hours ago        Exited (2) 7 seconds ago                       upbeat_neumann</span><br><span class="line"></span><br><span class="line">G:\Docker&gt;docker container start 7fb</span><br><span class="line">7fb</span><br><span class="line"></span><br><span class="line">G:\Docker&gt;docker exec -it 7fb sh</span><br><span class="line">/ # exit</span><br><span class="line"></span><br><span class="line">G:\Docker&gt;docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">7fb6406e7f98        busybox             &quot;sh&quot;                11 hours ago        Up 24 seconds                           upbeat_neumann</span><br></pre></td></tr></table></figure>
+<p>所以若是不希望容器停止的话建议使用docker exec命令</p>
+<h4 id="使用–help"><a href="#使用–help" class="headerlink" title="使用–help"></a>使用–help</h4><p>分别输入 <code>docker attach --help</code> 和 <code>docker exec --help</code> 可以发现它们的区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">G:\Docker&gt;docker attach --help</span><br><span class="line"></span><br><span class="line">Usage:  docker attach [OPTIONS] CONTAINER</span><br><span class="line"></span><br><span class="line">Attach local standard input, output, and error streams to a running container</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">      --detach-keys string   Override the key sequence for detaching a</span><br><span class="line">                             container</span><br><span class="line">      --no-stdin             Do not attach STDIN</span><br><span class="line">      --sig-proxy            Proxy all received signals to the process</span><br><span class="line">                             (default true)</span><br><span class="line"></span><br><span class="line">G:\Docker&gt;docker exec --help</span><br><span class="line"></span><br><span class="line">Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]</span><br><span class="line"></span><br><span class="line">Run a command in a running container</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -d, --detach               Detached mode: run command in the background</span><br><span class="line">      --detach-keys string   Override the key sequence for detaching a</span><br><span class="line">                             container</span><br><span class="line">  -e, --env list             Set environment variables</span><br><span class="line">  -i, --interactive          Keep STDIN open even if not attached</span><br><span class="line">      --privileged           Give extended privileges to the command</span><br><span class="line">  -t, --tty                  Allocate a pseudo-TTY</span><br><span class="line">  -u, --user string          Username or UID (format:</span><br><span class="line">                             &lt;name|uid&gt;[:&lt;group|gid&gt;])</span><br><span class="line">  -w, --workdir string       Working directory inside the container</span><br></pre></td></tr></table></figure>
+<p>从上面Usage可以看到 <code>docker attach</code> 除了参数只能后面带容器，而 <code>docker exec</code> 容器后面就必须有命令。</p>
+<p><code>docker exec</code> 后面带什么命令可由 <code>docker ps -a</code> 查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">G:\Docker&gt;docker ps -a</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">7fb6406e7f98        busybox             &quot;sh&quot;                11 hours ago        Up 14 minutes                           upbeat_neumann</span><br></pre></td></tr></table></figure>
+<p>说明带 <code>sh</code> 命令就行了，如果COMMAND不显示命令，可能一般是/bin/bash或者/bin/sh，下面就试试看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">G:\Docker&gt;docker exec -it 7fb /bin/sh</span><br><span class="line">/ # exit</span><br><span class="line"></span><br><span class="line">G:\Docker&gt;docker exec -it 7fb /bin/bash</span><br><span class="line">OCI runtime exec failed: exec failed: container_linux.go:348: starting container process caused &quot;exec: \&quot;/bin/bash\&quot;: stat /bin/bash: no such file or directory&quot;: unknown</span><br></pre></td></tr></table></figure>
+<h2 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h2><p><code>docker container rm</code> </p>
+<h2 id="清理所有处于终止状态的容器"><a href="#清理所有处于终止状态的容器" class="headerlink" title="清理所有处于终止状态的容器"></a>清理所有处于终止状态的容器</h2><p><code>docker container ls -a</code> 查看所有已经创建的包括终止状态的容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container prune</span><br></pre></td></tr></table></figure>
+<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="获取官方镜像"><a href="#获取官方镜像" class="headerlink" title="获取官方镜像"></a>获取官方镜像</h2><p>首先 <code>docker search busybox</code> 查看镜像信息，选择官方的一种</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\zoukeqing&gt;docker search busybox</span><br><span class="line"></span><br><span class="line">NAME                        DESCRIPTION                                     STARS               OFFICIAL            AUTO                                                                     MATED</span><br><span class="line"></span><br><span class="line">busybox                     Busybox base image.                             1354                [OK]</span><br><span class="line"></span><br><span class="line">progrium/busybox                                                            68                                      [OK]</span><br><span class="line"></span><br><span class="line">hypriot/rpi-busybox-httpd   Raspberry Pi compatible Docker Image with a …   44</span><br><span class="line"></span><br><span class="line">radial/busyboxplus          Full-chain, Internet enabled, busybox made f…   20                                      [OK                                                                     ]</span><br><span class="line"></span><br><span class="line">hypriot/armhf-busybox       Busybox base image for ARM.                     9</span><br><span class="line"></span><br><span class="line">arm32v7/busybox             Busybox base image.                             6</span><br><span class="line"></span><br><span class="line">armhf/busybox               Busybox base image.                             4</span><br><span class="line"></span><br><span class="line">yauritux/busybox-curl       Busybox with CURL                               3</span><br><span class="line"></span><br><span class="line">p7ppc64/busybox             Busybox base image for ppc64.                   2</span><br><span class="line"></span><br><span class="line">prom/busybox                Prometheus Busybox Docker base images           2                                       [OK]</span><br><span class="line"></span><br><span class="line">odise/busybox-curl                                                          2                                       [OK]</span><br><span class="line"></span><br><span class="line">aarch64/busybox             Busybox base image.                             2</span><br><span class="line"></span><br><span class="line">s390x/busybox               Busybox base image.                             2</span><br><span class="line"></span><br><span class="line">onsi/grace-busybox                                                          2</span><br><span class="line"></span><br><span class="line">armel/busybox               Busybox base image.                             2</span><br><span class="line"></span><br><span class="line">i386/busybox                Busybox base image.                             2</span><br><span class="line"></span><br><span class="line">sequenceiq/busybox                                                          2                                       [OK]</span><br><span class="line"></span><br><span class="line">arm64v8/busybox             Busybox base image.                             1</span><br><span class="line"></span><br><span class="line">spotify/busybox             Spotify fork of &lt;https://hub.docker.com/_/bus&gt;…   1</span><br><span class="line"></span><br><span class="line">ppc64le/busybox             Busybox base image.                             1</span><br><span class="line"></span><br><span class="line">trollin/busybox                                                             0</span><br><span class="line"></span><br><span class="line">cfgarden/garden-busybox                                                     0</span><br><span class="line"></span><br><span class="line">ggtools/busybox-ubuntu      Busybox ubuntu version with extra goodies       0                                       [OK]</span><br><span class="line"></span><br><span class="line">concourse/busyboxplus                                                       0</span><br><span class="line"></span><br><span class="line">amd64/busybox               Busybox base image.                             0</span><br></pre></td></tr></table></figure>
+<p>可以看到最受欢迎的镜像同时带有 OFFICIAL 标记，说明它是官方镜像。</p>
+<h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><p><strong>使用 <code>docker pull</code> 指令下载镜像</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\zoukeqing&gt;docker pull busybox</span><br><span class="line"></span><br><span class="line">Using default tag: latest</span><br><span class="line"></span><br><span class="line">latest: Pulling from library/busybox</span><br><span class="line"></span><br><span class="line">8c5a7da1afbc: Pull complete</span><br><span class="line"></span><br><span class="line">Digest: sha256:cb63aa0641a885f54de20f61d152187419e8f6b159ed11a251a09d115fdff9bd</span><br><span class="line"></span><br><span class="line">Status: Downloaded newer image for busybox:latest</span><br></pre></td></tr></table></figure>
+<p>下面查看镜像可以看到busybox镜像只有1.16MB</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">G:\Docker&gt;docker images busybox</span><br><span class="line"></span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line"></span><br><span class="line">busybox             latest              e1ddd7948a1c        6 weeks ago         1.16MB</span><br></pre></td></tr></table></figure>
+<h2 id="启动并运行"><a href="#启动并运行" class="headerlink" title="启动并运行"></a>启动并运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line">G:\Docker&gt;docker run -it busybox</span><br><span class="line"></span><br><span class="line">/ # grep</span><br><span class="line"></span><br><span class="line">BusyBox v1.29.2 (2018-07-31 20:19:16 UTC) multi-call binary.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Usage: grep [-HhnlLoqvsriwFE][-m N] [-A/B/C N] PATTERN/-e PATTERN.../-f FILE [FILE]...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Search for PATTERN in FILEs (or stdin)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        -H      Add &apos;filename:&apos; prefix</span><br><span class="line"></span><br><span class="line">        -h      Do not add &apos;filename:&apos; prefix</span><br><span class="line"></span><br><span class="line">        -n      Add &apos;line_no:&apos; prefix</span><br><span class="line"></span><br><span class="line">        -l      Show only names of files that match</span><br><span class="line"></span><br><span class="line">        -L      Show only names of files that don&apos;t match</span><br><span class="line"></span><br><span class="line">        -c      Show only count of matching lines</span><br><span class="line"></span><br><span class="line">        -o      Show only the matching part of line</span><br><span class="line"></span><br><span class="line">        -q      Quiet. Return 0 if PATTERN is found, 1 otherwise</span><br><span class="line"></span><br><span class="line">        -v      Select non-matching lines</span><br><span class="line"></span><br><span class="line">        -s      Suppress open and read errors</span><br><span class="line"></span><br><span class="line">        -r      Recurse</span><br><span class="line"></span><br><span class="line">        -i      Ignore case</span><br><span class="line"></span><br><span class="line">        -w      Match whole words only</span><br><span class="line"></span><br><span class="line">        -x      Match whole lines only</span><br><span class="line"></span><br><span class="line">        -F      PATTERN is a literal (not regexp)</span><br><span class="line"></span><br><span class="line">        -E      PATTERN is an extended regexp</span><br><span class="line"></span><br><span class="line">        -m N    Match up to N times per file</span><br><span class="line"></span><br><span class="line">        -A N    Print N lines of trailing context</span><br><span class="line"></span><br><span class="line">        -B N    Print N lines of leading context</span><br><span class="line"></span><br><span class="line">        -C N    Same as &apos;-A N -B N&apos;</span><br><span class="line"></span><br><span class="line">        -e PTRN Pattern to match</span><br><span class="line"></span><br><span class="line">        -f FILE Read pattern from file</span><br><span class="line"></span><br><span class="line">/ # mount</span><br><span class="line"></span><br><span class="line">overlay on / type overlay (rw,relatime,lowerdir=/var/lib/docker/overlay2/l/ESBXGMI6VSIGTBUC3AVDZMHX3O:/var/lib/docker/overlay2/l/WHC32OFN4EESZIFRWLEFN7HZT4,upperdir=/var/lib/docker/overlay2/acbeca1c1bd1a1af6d26338c48ba5fbee83883c61034220209f76181ddcd08a1/diff,workdir=/var/lib/docker/overlay2/acbeca1c1bd1a1af6d26338c48ba5fbee83883c61034220209f76181ddcd08a1/work)</span><br><span class="line"></span><br><span class="line">proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)</span><br><span class="line"></span><br><span class="line">tmpfs on /dev type tmpfs (rw,nosuid,size=65536k,mode=755)</span><br><span class="line"></span><br><span class="line">devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=666)</span><br><span class="line"></span><br><span class="line">sysfs on /sys type sysfs (ro,nosuid,nodev,noexec,relatime)</span><br><span class="line"></span><br><span class="line">tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,relatime,mode=755)</span><br><span class="line"></span><br><span class="line">cpuset on /sys/fs/cgroup/cpuset type cgroup (ro,nosuid,nodev,noexec,relatime,cpuset)</span><br><span class="line"></span><br><span class="line">cpu on /sys/fs/cgroup/cpu type cgroup (ro,nosuid,nodev,noexec,relatime,cpu)</span><br><span class="line"></span><br><span class="line">cpuacct on /sys/fs/cgroup/cpuacct type cgroup (ro,nosuid,nodev,noexec,relatime,cpuacct)</span><br><span class="line"></span><br><span class="line">blkio on /sys/fs/cgroup/blkio type cgroup (ro,nosuid,nodev,noexec,relatime,blkio)</span><br><span class="line"></span><br><span class="line">memory on /sys/fs/cgroup/memory type cgroup (ro,nosuid,nodev,noexec,relatime,memory)</span><br><span class="line"></span><br><span class="line">devices on /sys/fs/cgroup/devices type cgroup (ro,nosuid,nodev,noexec,relatime,devices)</span><br><span class="line"></span><br><span class="line">freezer on /sys/fs/cgroup/freezer type cgroup (ro,nosuid,nodev,noexec,relatime,freezer)</span><br><span class="line"></span><br><span class="line">net_cls on /sys/fs/cgroup/net_cls type cgroup (ro,nosuid,nodev,noexec,relatime,net_cls)</span><br><span class="line"></span><br><span class="line">perf_event on /sys/fs/cgroup/perf_event type cgroup (ro,nosuid,nodev,noexec,relatime,perf_event)</span><br><span class="line"></span><br><span class="line">net_prio on /sys/fs/cgroup/net_prio type cgroup (ro,nosuid,nodev,noexec,relatime,net_prio)</span><br><span class="line"></span><br><span class="line">hugetlb on /sys/fs/cgroup/hugetlb type cgroup (ro,nosuid,nodev,noexec,relatime,hugetlb)</span><br><span class="line"></span><br><span class="line">pids on /sys/fs/cgroup/pids type cgroup (ro,nosuid,nodev,noexec,relatime,pids)</span><br><span class="line"></span><br><span class="line">cgroup on /sys/fs/cgroup/systemd type cgroup (ro,nosuid,nodev,noexec,relatime,name=systemd)</span><br><span class="line"></span><br><span class="line">mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)</span><br><span class="line"></span><br><span class="line">/dev/sda1 on /etc/resolv.conf type ext4 (rw,relatime,data=ordered)</span><br><span class="line"></span><br><span class="line">/dev/sda1 on /etc/hostname type ext4 (rw,relatime,data=ordered)</span><br><span class="line"></span><br><span class="line">/dev/sda1 on /etc/hosts type ext4 (rw,relatime,data=ordered)</span><br><span class="line"></span><br><span class="line">shm on /dev/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=65536k)</span><br><span class="line"></span><br><span class="line">devpts on /dev/console type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=666)</span><br><span class="line"></span><br><span class="line">proc on /proc/bus type proc (ro,relatime)</span><br><span class="line"></span><br><span class="line">proc on /proc/fs type proc (ro,relatime)</span><br><span class="line"></span><br><span class="line">proc on /proc/irq type proc (ro,relatime)</span><br><span class="line"></span><br><span class="line">proc on /proc/sys type proc (ro,relatime)</span><br><span class="line"></span><br><span class="line">proc on /proc/sysrq-trigger type proc (ro,relatime)</span><br><span class="line"></span><br><span class="line">tmpfs on /proc/acpi type tmpfs (ro,relatime)</span><br><span class="line"></span><br><span class="line">tmpfs on /proc/kcore type tmpfs (rw,nosuid,size=65536k,mode=755)</span><br><span class="line"></span><br><span class="line">tmpfs on /proc/keys type tmpfs (rw,nosuid,size=65536k,mode=755)</span><br><span class="line"></span><br><span class="line">tmpfs on /proc/timer_list type tmpfs (rw,nosuid,size=65536k,mode=755)</span><br><span class="line"></span><br><span class="line">tmpfs on /proc/sched_debug type tmpfs (rw,nosuid,size=65536k,mode=755)</span><br><span class="line"></span><br><span class="line">tmpfs on /sys/firmware type tmpfs (ro,relatime)</span><br><span class="line"></span><br><span class="line">/ # exit</span><br></pre></td></tr></table></figure>
+<p>-t 选项让Docker分配一个伪终端（pseudo-tty）并绑定到容器的标准输入上， -i 则让容器的标准输入保持打开。</p>
+<p><strong>下面查看状态，已停止，说明自动停止</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">G:\Docker&gt;docker ps -a</span><br><span class="line"></span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS                     PORTS               NAMES</span><br><span class="line"></span><br><span class="line">7fb6406e7f98        busybox             &quot;sh&quot;                About a minute ago   Exited (0) 8 seconds ago                       upbeat_neumann</span><br></pre></td></tr></table></figure>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p>前面需要Docker的知识也基本掌握了，接下来就开始学习Linux啦。。。</p>
+<p>网上有很多教程，可以参考菜鸟教程和易百教程，这里就不介绍啦！ :blush:</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/12/docker-started/" rel="next" title="Docker入门">
+                <i class="fa fa-chevron-left"></i> Docker入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://s1.ax1x.com/2018/09/10/iFuZVS.jpg"
+               alt="zoukeqing" />
+          <p class="site-author-name" itemprop="name">zoukeqing</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/halzhan" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/zoukeqing" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                      Twitter
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="gmailto:zoukeqing@gmail.com or qqto:1146704412@qq.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker需要掌握的知识点"><span class="nav-number">2.</span> <span class="nav-text">Docker需要掌握的知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取镜像"><span class="nav-number">2.1.</span> <span class="nav-text">获取镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动容器"><span class="nav-number">2.2.</span> <span class="nav-text">启动容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新建并启动"><span class="nav-number">2.2.1.</span> <span class="nav-text">新建并启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动已终止容器"><span class="nav-number">2.2.2.</span> <span class="nav-text">启动已终止容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#终止容器"><span class="nav-number">2.2.3.</span> <span class="nav-text">终止容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入容器"><span class="nav-number">2.2.4.</span> <span class="nav-text">进入容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-attach"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">docker attach</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-exec"><span class="nav-number">2.2.4.2.</span> <span class="nav-text">docker exec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用–help"><span class="nav-number">2.2.4.3.</span> <span class="nav-text">使用–help</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除容器"><span class="nav-number">2.3.</span> <span class="nav-text">删除容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清理所有处于终止状态的容器"><span class="nav-number">2.4.</span> <span class="nav-text">清理所有处于终止状态的容器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始"><span class="nav-number">3.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取官方镜像"><span class="nav-number">3.1.</span> <span class="nav-text">获取官方镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载镜像"><span class="nav-number">3.2.</span> <span class="nav-text">下载镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动并运行"><span class="nav-number">3.3.</span> <span class="nav-text">启动并运行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux"><span class="nav-number">4.</span> <span class="nav-text">Linux</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zoukeqing</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+ 
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ujt2yLILL0mSJIWQCiWa4RSJ-gzGzoHsz", "q4lEXTaTuFK30oyXvbhoSqFm");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
