@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MarkDown插入图片使用base64格式]]></title>
+    <url>%2F2018%2F09%2F17%2Fimage-converted-to-base64%2F</url>
+    <content type="text"><![CDATA[摘要：将图片转化为base64格式，MarkDown能显示吗？ 首先制作图片转化为base64格式的h5网页，参考百度经验： https://jingyan.baidu.com/article/ac6a9a5e7abd312b653eac9c.html 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;title&gt;图片转base64格式&lt;/title&gt; &lt;style type="text/css"&gt; html&#123;font-family: "microsoft yahei";overflow: hidden;&#125; html&#123;height: 100%;padding: 0;margin: 0;&#125; a&#123;text-decoration: none;outline: none;&#125; .title&#123;color: #ddd;text-shadow: 2px 2px 5px #000;padding: 80px 0px 0px 100px;&#125; .main,.img_main&#123;float: left;background-color: rgba(255,255,255,.7);border-radius: 4px;padding: 20px;margin: 0 3px;&#125; .main&#123;width: 40%;margin-left:100px;&#125; .img_main&#123;max-width: 40%;&#125; .preview&#123;width: 100%;&#125; .select-file&#123;border:1px solid #012456;position: relative;&#125; .select-file:after&#123;content: '';display: block;clear: both;&#125; .select-file-title,.select-file-btn&#123;float: left;line-height: 30px;height: 30px;&#125; .select-file-title&#123;width: 80%;&#125; .select-file-btn&#123;width: 20%;background-color: #012456;text-align: center;color: #fff;transition: background-color .5s;&#125; .select-file-btn:hover&#123;background-color: #1ABC9C;&#125; .base64-text&#123;background-color:transparent;height: 300px;width: calc(100% - 6px);resize:none;overflow: auto;border: 1px solid #012456;margin-top: 10px;word-break: break-all;&#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1 class="title"&gt;图片转Base64&lt;/h1&gt;&lt;div class="main"&gt; &lt;div class="control"&gt; &lt;div class="select-file"&gt; &lt;div class="select-file-title"&gt;&lt;/div&gt; &lt;a href="javascript:;" class="select-file-btn"&gt;选择文件&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class="control"&gt; &lt;textarea class="base64-text" readonly&gt;&lt;/textarea&gt; &lt;/div&gt;&lt;/div&gt;&lt;div class="img_main"&gt; &lt;img src="" class="preview"/&gt;&lt;/div&gt;&lt;script type="text/javascript"&gt; var inputFile = document.createElement('input'); inputFile.type = 'file'; var selectFile = document.querySelector('.select-file'); var base64Text = document.querySelector('.base64-text'); var preview = document.querySelector('.preview'); var reader = new FileReader(); reader.onload = function()&#123; base64Text.innerText = this.result; preview.src = this.result; &#125;; inputFile.addEventListener('change', function()&#123; selectFile.querySelector('.select-file-title').innerHTML = this.value; if(this.files.length == 0)&#123; base64Text.innerText = ''; return; &#125; var file = inputFile.files[0]; base64Text.placeholder = ''; if(!(/^image/.test(file.type)))&#123; base64Text.placeholder = '不是图片文件'; return; &#125; reader.readAsDataURL(file); &#125;); selectFile.addEventListener('click', function()&#123; inputFile.click(); &#125;);&lt;/script&gt;&lt;!--百度经验：https://jingyan.baidu.com/article/ac6a9a5e7abd312b653eac9c.html--&gt;&lt;/body&gt;&lt;/html&gt; 项目地址为 https://github.com/zoukeqing/img-converted-to-base64 在支持h5的浏览器运行，选择图片文件，等待转换完成 在markdown插入图片，输入base64格式，看下面效果 可F12快捷键打开开发者工具，查看这个图片的src属性的内容 总结markdown插入base64代码还是不会减少这个文件的空间大小，一般使用图床生成图片链接，在markdown引用这个链接不会占用太多的空间，特别是Github pages有空间限制。]]></content>
+      <categories>
+        <category>Base64</category>
+      </categories>
+      <tags>
+        <tag>Image</tag>
+        <tag>Base64</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[今天分享一个很不错的Chrome扩展程序]]></title>
     <url>%2F2018%2F09%2F14%2Fchrome-plug-in-full-page-screen-capture%2F</url>
     <content type="text"><![CDATA[PLUG IN 完整可靠地捕获当前页面的屏幕截图，无需任何额外权限！ 获取当前浏览器窗口的完整页面截图的最简单方法。单击扩展图标（或按Alt + Shift + P），观看扩展捕获页面的每个部分，然后将其传输到屏幕截图的新选项卡，您可以将其作为图像或PDF下载，甚至只需将其拖动即可到你的桌面。 没有臃肿，没有广告，没有不必要的权限，只是将完整的网页转换为图像的简单方法。 NEW：先进的屏幕捕获技术处理复杂的页面 - 包括内部可滚动元素以及嵌入式iframe - 与任何其他扩展不同。如果您遇到问题，请通过捕获页面上的客户支持标志图标进行报告，以便我们为您和使用它的所有其他人改进扩展程序。 为了截取整个页面，它必须滚动到每个可见部分，所以请耐心等待，因为它可以快速组装所有部分。对于罕见的情况，您的网页太大而Chrome无法存储在一个图片中，它会让您知道并将其拆分为单独标签中的图片。 将结果导出为PNG，JPEG或各种PDF纸张尺寸 - 所有这些都可以从扩展程序的选项中进行配置。 此扩展由独立开发人员运行。在github上查看原始的开源项目：https：//github.com/mrcoles/full-page-screen-capture-chrome-extension 下载安装下载安装有两种方式： 一种是直接从Chrome网上应用店搜索 Full Page Screen Capture 进行直接安装 地址：https://chrome.google.com/webstore/detail/full-page-screen-capture/fdpohaocaechififmbbbbbknoalclacl 另一种通过打包扩展程序，打包成crx格式，使用开发模式进行安装 下面就介绍最后一种的 下载 Full Page Screen Capture 程序，微云链接：https://share.weiyun.com/5GBowk1 密码：73rrb5 下载后地址栏输入 chrome://extensions/ ，打开开发者模式，将文件拖拽到扩展程序那一栏里，并添加扩展程序 随意打开你要捕获页面全屏的，点击右上角程序图标键 比如我输入 zoukeqing.top ,点击右上角功能键，静候，出现的效果如下 Full Page Screen Capture 微云链接：https://share.weiyun.com/5GBowk1 密码：73rrb5]]></content>
@@ -21,8 +33,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Docker</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
