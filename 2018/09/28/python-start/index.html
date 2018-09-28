@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -96,17 +96,18 @@
 
 
 
-<meta name="description" content="Life in NEW !">
-<meta name="keywords" content="zoukeqing&#x2F;zoukeqing">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zoukeqing&#39;s Blog">
-<meta property="og:url" content="https://zoukeqing.top/index.html">
+<meta name="description" content="print(“Hello Python !”) 开始123first_name = &amp;quot;zou&amp;quot;last_name = &amp;quot;keqing&amp;quot;full_name = first_name + &amp;quot; &amp;quot; + last_name 方法title() 来将姓名设置为合适的格式 1234# 方法title() 来将姓名设置为合适的格式message = &amp;">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python-start">
+<meta property="og:url" content="https://zoukeqing.top/2018/09/28/python-start/index.html">
 <meta property="og:site_name" content="zoukeqing&#39;s Blog">
-<meta property="og:description" content="Life in NEW !">
+<meta property="og:description" content="print(“Hello Python !”) 开始123first_name = &amp;quot;zou&amp;quot;last_name = &amp;quot;keqing&amp;quot;full_name = first_name + &amp;quot; &amp;quot; + last_name 方法title() 来将姓名设置为合适的格式 1234# 方法title() 来将姓名设置为合适的格式message = &amp;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-28T14:39:05.259Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zoukeqing&#39;s Blog">
-<meta name="twitter:description" content="Life in NEW !">
+<meta name="twitter:title" content="python-start">
+<meta name="twitter:description" content="print(“Hello Python !”) 开始123first_name = &amp;quot;zou&amp;quot;last_name = &amp;quot;keqing&amp;quot;full_name = first_name + &amp;quot; &amp;quot; + last_name 方法title() 来将姓名设置为合适的格式 1234# 方法title() 来将姓名设置为合适的格式message = &amp;">
 
 
 
@@ -135,14 +136,14 @@
 
 
 
-  <link rel="canonical" href="https://zoukeqing.top/"/>
+  <link rel="canonical" href="https://zoukeqing.top/2018/09/28/python-start/"/>
 
 
 
 
 
 
-  <title>zoukeqing's Blog</title>
+  <title>python-start | zoukeqing's Blog</title>
   
 
 
@@ -167,9 +168,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -306,9 +305,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -338,9 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/28/python-start/" itemprop="url">python-start</a></h1>
+          <h1 class="post-title" itemprop="name headline">python-start</h1>
         
 
         <div class="post-meta">
@@ -424,9 +421,7 @@
       
 
       
-        
-          
-            <p>print(“Hello Python !”)</p>
+        <p>print(“Hello Python !”)</p>
 <p>开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">first_name = &quot;zou&quot;</span><br><span class="line">last_name = &quot;keqing&quot;</span><br><span class="line">full_name = first_name + &quot; &quot; + last_name</span><br></pre></td></tr></table></figure></p>
 <p>方法title() 来将姓名设置为合适的格式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 方法title() 来将姓名设置为合适的格式</span><br><span class="line">message = &quot;hello,&quot; + full_name.title() + &quot; !&quot;</span><br><span class="line">print(message)</span><br><span class="line"># 输出为hello,Zou Keqing !</span><br></pre></td></tr></table></figure>
@@ -690,8 +685,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line">from hello import AddName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class TestAddName(unittest.TestCase):</span><br><span class="line">    def test_store_single_name(self):</span><br><span class="line">        add_name = AddName()</span><br><span class="line">        add_name.store_name(&apos;kkk&apos;)</span><br><span class="line">        self.assertIn(&apos;kkk&apos;, add_name.names)</span><br><span class="line"></span><br><span class="line">    def test_store_three_names(self):</span><br><span class="line">        add_name = AddName()</span><br><span class="line">        add_name.store_name(&apos;zou&apos;)</span><br><span class="line">        add_name.store_name(&apos;yu&apos;)</span><br><span class="line">        add_name.store_name(&apos;huang&apos;)</span><br><span class="line">        names = [&apos;zou&apos;, &apos;yu&apos;, &apos;huang&apos;]</span><br><span class="line">        for name in names:</span><br><span class="line">            self.assertIn(name, add_name.names)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">unittest.main()</span><br></pre></td></tr></table></figure>
 <h2 id="setUp-方法"><a href="#setUp-方法" class="headerlink" title="setUp() 方法"></a>setUp() 方法</h2><p>只需创建对象一次，并在每个测试方法中使用它们<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line">from hello import AddName</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class TestAddName(unittest.TestCase):</span><br><span class="line">    def setUp(self):</span><br><span class="line">        self.add_name = AddName()</span><br><span class="line">        self.add_name.store_name(&apos;kkk&apos;)</span><br><span class="line">        self.add_name.store_name(&apos;zou&apos;)</span><br><span class="line">        self.add_name.store_name(&apos;yu&apos;)</span><br><span class="line">        self.add_name.store_name(&apos;huang&apos;)</span><br><span class="line">        name_1 = &apos;ooo&apos;</span><br><span class="line">        self.add_name.store_name(name_1)</span><br><span class="line"></span><br><span class="line">    def test_store_single_name(self):</span><br><span class="line">        self.assertIn(&apos;kkk&apos;, self.add_name.names)</span><br><span class="line"></span><br><span class="line">    def test_store_three_names(self):</span><br><span class="line">        names = [&apos;zou&apos;, &apos;yu&apos;, &apos;huang&apos;]</span><br><span class="line">        for name in names:</span><br><span class="line">            self.assertIn(name, self.add_name.names)</span><br><span class="line">        print(self.add_name.names)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">unittest.main()</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
@@ -706,504 +699,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zoukeqing.top/2018/09/18/r-start/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zoukeqing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s1.ax1x.com/2018/09/10/iFuZVS.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zoukeqing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/18/r-start/" itemprop="url">R语言快速入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-18T10:55:15+08:00">
-                2018-09-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/R/" itemprop="url" rel="index">
-                    <span itemprop="name">R</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/18/r-start/" class="leancloud_visitors" data-flag-title="R语言快速入门">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-			
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h1 id="START"><a href="#START" class="headerlink" title="START"></a>START</h1><h2 id="为什么要使用R？"><a href="#为什么要使用R？" class="headerlink" title="为什么要使用R？"></a>为什么要使用R？</h2><blockquote>
-<p>多数商业统计软件价格不菲，投入成千上万美元都是可能的。而R是免费的！</p>
-<p>R拥有顶尖水准的制图功能。如果希望复杂数据可视化，那么R拥有最全面且最强大的一<br>系列可用功能。</p>
-<p>R是一个可进行交互式数据分析和探索的强大平台。</p>
-<p>R是一个无与伦比的平台，在其上可使用一种简单而直接的方式编写新的统计方法。它易<br>于扩展，并为快速编程实现新方法提供了一套十分自然的语言。</p>
-<p>R可运行于多种平台之上，包括Windows、UNIX和Mac OS X。这基本上意味着它可以运<br>行于你所能拥有的任何计算机上。</p>
-</blockquote>
-<p>下面展示R制图功能的一个示例</p>
-<p><img src="https://s1.ax1x.com/2018/09/18/iZXSG8.png" alt=""></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/18/r-start/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/18/r-start/" rel="next" title="R语言快速入门">
+                <i class="fa fa-chevron-left"></i> R语言快速入门
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zoukeqing.top/2018/09/17/image-converted-to-base64/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zoukeqing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s1.ax1x.com/2018/09/10/iFuZVS.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zoukeqing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/17/image-converted-to-base64/" itemprop="url">MarkDown插入图片使用base64格式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-17T16:39:54+08:00">
-                2018-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Base64/" itemprop="url" rel="index">
-                    <span itemprop="name">Base64</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/17/image-converted-to-base64/" class="leancloud_visitors" data-flag-title="MarkDown插入图片使用base64格式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-			
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>摘要：将图片转化为base64格式，MarkDown能显示吗？</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/17/image-converted-to-base64/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zoukeqing.top/2018/09/14/chrome-plug-in-full-page-screen-capture/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zoukeqing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s1.ax1x.com/2018/09/10/iFuZVS.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zoukeqing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/14/chrome-plug-in-full-page-screen-capture/" itemprop="url">今天分享一个很不错的Chrome扩展程序</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-14T17:01:11+08:00">
-                2018-09-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Chrome/" itemprop="url" rel="index">
-                    <span itemprop="name">Chrome</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/14/chrome-plug-in-full-page-screen-capture/" class="leancloud_visitors" data-flag-title="今天分享一个很不错的Chrome扩展程序">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-			
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="PLUG-IN"><a href="#PLUG-IN" class="headerlink" title="PLUG IN"></a>PLUG IN</h1><blockquote>
-<p>完整可靠地捕获当前页面的屏幕截图，无需任何额外权限！</p>
-<p>获取当前浏览器窗口的完整页面截图的最简单方法。单击扩展图标（或按Alt + Shift + P），观看扩展捕获页面的每个部分，然后将其传输到屏幕截图的新选项卡，您可以将其作为图像或PDF下载，甚至只需将其拖动即可到你的桌面。</p>
-<p><em>没有臃肿，没有广告，没有不必要的权限，只是将完整的网页转换为图像的简单方法。</em></p>
-<p><em>NEW：</em>先进的屏幕捕获技术处理复杂的页面 - 包括内部可滚动元素以及嵌入式iframe - 与任何其他扩展不同。如果您遇到问题，请通过捕获页面上的客户支持标志图标进行报告，以便我们为您和使用它的所有其他人改进扩展程序。</p>
-<p>为了截取整个页面，它必须滚动到每个可见部分，所以请耐心等待，因为它可以快速组装所有部分。对于罕见的情况，您的网页太大而Chrome无法存储在一个图片中，它会让您知道并将其拆分为单独标签中的图片。</p>
-<p>将结果导出为PNG，JPEG或各种PDF纸张尺寸 - 所有这些都可以从扩展程序的选项中进行配置。</p>
-<p>此扩展由独立开发人员运行。在github上查看原始的开源项目：https：//github.com/mrcoles/full-page-screen-capture-chrome-extension</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/14/chrome-plug-in-full-page-screen-capture/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1213,700 +738,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zoukeqing.top/2018/09/13/learning-linux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zoukeqing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s1.ax1x.com/2018/09/10/iFuZVS.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zoukeqing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/13/learning-linux/" itemprop="url">有Docker？这可能学习Linux最好的方式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-13T08:08:08+08:00">
-                2018-09-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Docker/" itemprop="url" rel="index">
-                    <span itemprop="name">Docker</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Docker/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/13/learning-linux/" class="leancloud_visitors" data-flag-title="有Docker？这可能学习Linux最好的方式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-			
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>BusyBox 是一个集成了一百多个最常用 Linux 命令和工具（如 cat、echo、grep、mount、 telnet 等）的精简工具箱，它只需要几 MB 的大小，很方便进行各种快速验证，被誉为“Linux 系统的瑞士军刀”。 BusyBox 可运行于多款 POSIX 环境的操作系统中，如 Linux（包括 Android）、Hurd、 FreeBSD 等。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/13/learning-linux/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zoukeqing.top/2018/09/12/docker-started/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zoukeqing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s1.ax1x.com/2018/09/10/iFuZVS.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zoukeqing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/12/docker-started/" itemprop="url">Docker入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-12T19:21:41+08:00">
-                2018-09-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Docker/" itemprop="url" rel="index">
-                    <span itemprop="name">Docker</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/12/docker-started/" class="leancloud_visitors" data-flag-title="Docker入门">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-			
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>开始之前最好了解<a href="https://www.docker.com/why-docker" target="_blank" rel="noopener">什么是Dockers</a>以及<a href="https://www.docker.com/customers" target="_blank" rel="noopener">为何使用Dockers</a> </p>
-</blockquote>
-<h2 id="什么是Dockers"><a href="#什么是Dockers" class="headerlink" title="什么是Dockers"></a>什么是Dockers</h2><p>将软件打包成标准化单元，用于开发、装运和部署</p>
-<h2 id="为什么要使用Dockers"><a href="#为什么要使用Dockers" class="headerlink" title="为什么要使用Dockers"></a>为什么要使用Dockers</h2><p>了解容器和容器平台之间的差异，解决日益多样化的IT环境所需的条件以及企业在评估解决方案时应该考虑的能力</p>
-<h3 id="对比传统虚拟机总结"><a href="#对比传统虚拟机总结" class="headerlink" title="对比传统虚拟机总结"></a>对比传统虚拟机总结</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">特性</th>
-<th style="text-align:center">容器</th>
-<th style="text-align:center">虚拟机</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">启动</td>
-<td style="text-align:center">秒级</td>
-<td style="text-align:center">分钟级</td>
-</tr>
-<tr>
-<td style="text-align:center">硬盘容量</td>
-<td style="text-align:center">一般为MB</td>
-<td style="text-align:center">一般为GB</td>
-</tr>
-<tr>
-<td style="text-align:center">效能</td>
-<td style="text-align:center">接近原生</td>
-<td style="text-align:center">比较慢</td>
-</tr>
-<tr>
-<td style="text-align:center">系统支援量</td>
-<td style="text-align:center">单机支持上千个容器</td>
-<td style="text-align:center">一般几十个</td>
-</tr>
-</tbody>
-</table>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/12/docker-started/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zoukeqing.top/2018/09/11/github-hexo-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zoukeqing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s1.ax1x.com/2018/09/10/iFuZVS.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zoukeqing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/11/github-hexo-blog/" itemprop="url">Github pages + Hexo 搭建个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-11T09:54:24+08:00">
-                2018-09-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Github/" itemprop="url" rel="index">
-                    <span itemprop="name">Github</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Github/Github-Pages/" itemprop="url" rel="index">
-                    <span itemprop="name">Github Pages</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/11/github-hexo-blog/" class="leancloud_visitors" data-flag-title="Github pages + Hexo 搭建个人博客">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-			
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="准备环境（NodeJS-Git"><a href="#准备环境（NodeJS-Git" class="headerlink" title="准备环境（NodeJS+Git)"></a>准备环境（NodeJS+Git)</h2><ul>
-<li><p><a href="http://nodejs.cn/download/" target="_blank" rel="noopener">nodejs下载</a>之后，安装路径建议换到除C盘以外的硬盘上，比如我安装在<code>D:\nodejs</code>，其它的就默认next</p>
-</li>
-<li><p>安装结果输入命令测试结果，若出现版本则安装成功了。npm是NodeJS的包管理工具，可安装、卸载、更新、查看、搜索、发布等等。</p>
-</li>
-<li><p>改变环境配置npm的全局模块的存放路径以及cache的路径，提前新建好文件，然后输入以下命令</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix <span class="string">"D:\nodejs\Manual_setting\node_global"</span></span><br><span class="line">npm config set cache <span class="string">"D:\nodejs\Manual_setting\node_cache"</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/11/github-hexo-blog/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zoukeqing.top/2018/09/10/begin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zoukeqing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://s1.ax1x.com/2018/09/10/iFuZVS.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zoukeqing's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/10/begin/" itemprop="url">begin</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T15:50:57+08:00">
-                2018-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/开始吧/" itemprop="url" rel="index">
-                    <span itemprop="name">开始吧</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/10/begin/" class="leancloud_visitors" data-flag-title="begin">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-			
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="开始写作"><a href="#开始写作" class="headerlink" title="开始写作"></a>开始写作</h1>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -1914,6 +750,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -1934,8 +774,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://s1.ax1x.com/2018/09/10/iFuZVS.jpg"
@@ -2039,6 +888,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#列表"><span class="nav-number">1.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改、添加和删除元素"><span class="nav-number">1.1.</span> <span class="nav-text">修改、添加和删除元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改"><span class="nav-number">1.1.1.</span> <span class="nav-text">修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加"><span class="nav-number">1.1.2.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组织列表"><span class="nav-number">1.2.</span> <span class="nav-text">组织列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作列表"><span class="nav-number">1.3.</span> <span class="nav-text">操作列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数值列表"><span class="nav-number">1.3.1.</span> <span class="nav-text">创建数值列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用range-创建数字列表"><span class="nav-number">1.3.2.</span> <span class="nav-text">使用range()创建数字列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表解析"><span class="nav-number">1.3.3.</span> <span class="nav-text">列表解析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用列表的一部分"><span class="nav-number">1.4.</span> <span class="nav-text">使用列表的一部分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元组"><span class="nav-number">2.</span> <span class="nav-text">元组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if语句"><span class="nav-number">2.1.</span> <span class="nav-text">if语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查多个条件"><span class="nav-number">2.1.1.</span> <span class="nav-text">检查多个条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if-elif-else-结构"><span class="nav-number">2.2.</span> <span class="nav-text">if-elif-else 结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典"><span class="nav-number">3.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套"><span class="nav-number">3.1.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户输入和while-循环"><span class="nav-number">3.2.</span> <span class="nav-text">用户输入和while 循环</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#返回值"><span class="nav-number">4.1.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在函数中修改列表"><span class="nav-number">4.2.</span> <span class="nav-text">在函数中修改列表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">5.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建和使用类"><span class="nav-number">5.1.</span> <span class="nav-text">创建和使用类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">5.2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入类"><span class="nav-number">5.3.</span> <span class="nav-text">导入类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件和异常"><span class="nav-number">6.</span> <span class="nav-text">文件和异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写入文件"><span class="nav-number">6.1.</span> <span class="nav-text">写入文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">6.2.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储数据"><span class="nav-number">6.3.</span> <span class="nav-text">存储数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试代码"><span class="nav-number">7.</span> <span class="nav-text">测试代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试函数"><span class="nav-number">7.1.</span> <span class="nav-text">测试函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试类"><span class="nav-number">7.2.</span> <span class="nav-text">测试类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setUp-方法"><span class="nav-number">7.3.</span> <span class="nav-text">setUp() 方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -2181,10 +1046,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
